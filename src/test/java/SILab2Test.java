@@ -13,7 +13,6 @@ class SILab2Test {
         testB();
         testC();
         testD();
-        testE();
     }
 
     @Test
@@ -42,20 +41,14 @@ class SILab2Test {
     }
 
     void testC(){
-        User user = new User(null, "passwordd", "hristijan@mail.com");
-        List<User> allUsers = new ArrayList<>(1);
-        allUsers.add(new User("username123", "password.", "hristijan@mail.com"));
+        User user = new User(null, "passw ordd", "hristijan@mail.com");
+        List<User> allUsers = new ArrayList<>(2);
+        allUsers.add(new User("username123", "password.", "KRistijan@mail.com"));
+        allUsers.add(new User("hristijan@mail.com", "password.", "hristijan@mail.com"));
         assertFalse(SILab2.function(user, allUsers));
     }
 
     void testD(){
-        User user = new User(null, "pass word", "hristijan@mail.com");
-        List<User> allUsers = new ArrayList<>(1);
-        allUsers.add(new User("hristijan@mail.com", "password.", "email@email.co.uk"));
-        assertFalse(SILab2.function(user, allUsers));
-    }
-
-    void testE(){
         User user = new User("deligjorgjiev", "deli", "hristijan at mail dot com");
         assertFalse(SILab2.function(user, null)); //null list is okay, because of the email, the list elements are not checked through
     }
